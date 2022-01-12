@@ -76,38 +76,14 @@ function minimapScrollTo(elem, e) {
 	window.scrollTo({ top: mapped, left: 0, behavior: minimapDragging ? "instant" : "smooth" });
 }
 
-// For loading OpenCV HAAR files, taken off from OpenCV examples
-function createFileFromUrl(path, url, callback) {
-	let request = new XMLHttpRequest();
-	request.open("GET", url, true);
-	request.responseType = "arraybuffer";
-	request.onload = function(ev) {
-		if (request.readyState === 4) {
-			if (request.status === 200) {
-				try {
-					let data = new Uint8Array(request.response);
-					cv.FS_createDataFile("/", path, data, true, false, false);
-					callback();
-				} catch (error) {
-					alert(error);
-				}
-			} else {
-				alert("Failed to load " + url + " status: " + request.status);
-			}
-		}
-	};
-	request.send();
-};
-
 var src, gray, cap, faces, classifier;
 function OpenCVready() {
 	cv['onRuntimeInitialized']=()=>{
 		classifier = new cv.CascadeClassifier();
 		// load pre-trained classifiers
 		let faceCascadeFile = "haarcascade_frontalface_default.xml";
-		createFileFromUrl(faceCascadeFile, faceCascadeFile, () => {
-			classifier.load(faceCascadeFile);
-		});
+		cv.FS_createLazyFile("/", faceCascadeFile, faceCascadeFile, true, false);
+		classifier.load(faceCascadeFile);
 		faceBtnHolder = document.getElementById("faceButton");
 		setButtonState(faceBtnHolder, true);
 		faceBtnHolder.innerText = "Kasvojentunnistus päälle";
