@@ -79,11 +79,8 @@ function minimapScrollTo(elem, e) {
 var src, gray, cap, faces, classifier;
 function OpenCVready() {
 	cv['onRuntimeInitialized']=()=>{
-		classifier = new cv.CascadeClassifier();
-		// load pre-trained classifiers
-		let faceCascadeFile = "haarcascade_frontalface_default.xml";
-		cv.FS_createLazyFile("/", faceCascadeFile, faceCascadeFile, true, false);
-		classifier.load(faceCascadeFile);
+		// load HAAR data
+		cv.FS_createPreloadedFile("/", "haarcascade_frontalface_default.xml", "https://raw.githubusercontent.com/opencv/opencv/master/data/haarcascades/haarcascade_frontalface_default.xml", true, false);
 		faceBtnHolder = document.getElementById("faceButton");
 		setButtonState(faceBtnHolder, true);
 		faceBtnHolder.innerText = "Kasvojentunnistus päälle";
@@ -147,6 +144,8 @@ async function faceToggle() {
 		gray = new cv.Mat();
 		cap = new cv.VideoCapture(webcamHolder);
 		faces = new cv.RectVector();
+		classifier = new cv.CascadeClassifier();
+		classifier.load("haarcascade_frontalface_default.xml");
 		setTimeout(faceRecognize, 0);
 		setButtonState(faceBtnHolder, false);
 		faceBtnHolder.innerText = "Kasvojentunnistus pois";
@@ -170,6 +169,7 @@ function faceRecognize() {
 			src.delete();
 			gray.delete();
 			faces.delete();
+			classifier.delete();
 			return;
 		}
 		let begin = Date.now();
@@ -182,11 +182,11 @@ function faceRecognize() {
 			let point2 = new cv.Point(face.x + face.width, face.y + face.height);
 			cv.rectangle(src, point1, point2, [255, 0, 0, 255], 3);
 		}
-		cv.imshow('faceOut', src);
+		cv.imshow("faceOut", src);
 		let delay = 1000.0 / recogFPS - (Date.now() - begin);
 		setTimeout(faceRecognize, delay);
 	} catch (err) {
 		faceToggle();
-		alert("Kasvojentunnistus toimii vain oikealla palvelimella (esim. nginx)");
+		alert("Virhe : " + err);
 	}
 };
