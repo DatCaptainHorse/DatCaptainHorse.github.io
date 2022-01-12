@@ -1,0 +1,36 @@
+body {
+	overflow: hidden;
+	background-color: rgb(70, 70, 70);
+}
+
+.centered {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.loadingBarHolder {
+	width: 25em;
+	height: 2em;
+	background-color: gray;
+}
+
+.loadingBar {
+	width: 0%;
+	height: 100%;
+	background-color: green;
+	animation: loadingAnimation 3s linear infinite alternate;
+}
+
+@keyframes loadingAnimation {
+	0% {
+		width: 0%;
+		background-color: rgb(0, 75, 0);
+	}
+
+	100% {
+		width: 100%;
+		background-color: rgb(0, 125, 0);
+	}
+}

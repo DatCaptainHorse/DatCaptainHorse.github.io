@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/script.js"></script>
+		<title>Älykoti</title>
+	</head>
+	<body>
+		<button class="fancyButton" onclick="deviceAnimationToggle()"><a>Device</a></button>
+		<button class="fancyButton" onclick="lightsOn()"><a>All on</a></button>
+		<button class="fancyButton" onclick="lightsOff()"><a>All off</a></button>
+		<button class="fancyButton" onclick="lightColorCycle()"><a>Cycle colors</a></button>
+		<button class="fancyButton" onclick="addRandomLight()"><a>Add random light</a></button>
+		<div id="device">
+			<div class="display">
+				<div id="lightSwitches" class="lights">
+					<div class="lightSwitch" onclick="lightToggle(this, 'makuuhuone')"><a>makuuhuone</a></div>
+					<div class="lightSwitch" onclick="lightToggle(this, 'olohuone')"><a>olohuone</a></div>
+					<div class="lightSwitch" onclick="lightToggle(this, 'keittiö')"><a>keittiö</a></div>
+					<div class="lightSwitch" onclick="lightToggle(this, 'eteinen')"><a>eteinen</a></div>
+					<div class="lightSwitch" onclick="lightToggle(this, 'pesuhuone')"><a>pesuhuone</a></div>
+				</div>
+			</div>
+		</div>
+		<div class="visualized">
+			<div>
+				<div class="wall" style="width: 75%; height: 2%; top: 70%;"></div>
+				<div class="wall" style="width: 15%; height: 2%; top: 70%; right: 0%;"></div>
+				<div class="wall" style="width: 35%; height: 2%; top: 40%; right: 0%;"></div>
+				<div class="wall" style="width: 2%; height: 18%; top: 32%; right: 35%"></div>
+				<div class="wall" style="width: 2%; height: 8%; top: 62%; right: 35%"></div>
+				<div class="wall" style="width: 2%; height: 6%; top: 70%; left: 30%"></div>
+				<div class="wall" style="width: 2%; height: 15%; top: 85%; left: 30%"></div>
+			</div>
+			<div id="visualizedLights">
+				<div id="makuuhuone" class="visualLight" style="top: 15%; left: 35%;"></div>
+				<div id="olohuone" class="visualLight" style="top: 15%; right: 25%;"></div>
+				<div id="keittiö" class="visualLight" style="top: 50%; left: 20%;"></div>
+				<div id="eteinen" class="visualLight" style="top: 55%; right: 15%;"></div>
+				<div id="pesuhuone" class="visualLight" style="top: 83%; right: 35%;"></div>
+			</div>
+		</div>
+	</body>
+</html>

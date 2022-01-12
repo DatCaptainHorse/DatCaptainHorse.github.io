@@ -1,0 +1,95 @@
+body {
+	overflow: hidden;
+	background-color: rgb(70, 70, 70);
+}
+
+@font-face {
+	font-family: lcdFont;
+	src: url("../res/digital-7.ttf");
+}
+
+.radioBase {
+	position: absolute;
+	top: 30%;
+	left: 25%;
+	width: 650px;
+	height: 350px;
+	background-color: gray;
+	box-shadow: inset -5px -5px 1px 1px rgb(80, 80, 80), inset 1px 1px 1px 1px rgb(59, 59, 59);
+}
+
+.radioAntenna {
+	position: absolute;
+	top: -25%;
+	left: 15%;
+	width: 10px;
+	height: 25%;
+	background-color: gray;
+	box-shadow: inset -2px 0px 1px 1px rgb(56, 56, 56), inset 1px 1px 1px 1px rgb(56, 56, 56);
+}
+
+.radioKnob {
+	position: absolute;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	background-color: darkgray;
+	box-shadow: inset -5px -5px 3px 1px rgb(56, 56, 56), 3px 3px 3px 1px rgb(56, 56, 56);
+}
+
+.radioKnobIndicator {
+	position: relative;
+	left: calc(50% - 5px);
+	width: 10px;
+	height: 75px;
+	background-color: rgb(32, 32, 32);
+	transform-origin: center bottom;
+	animation: knobTurn 2s ease-in-out infinite;
+}
+
+.radioChannelBox {
+	position: absolute;
+	text-align: center;
+	top: 10%;
+	left: 10%;
+	width: 80%;
+	height: 30%;
+	background-color: rgb(32, 32, 32);
+	box-shadow: inset -5px -5px 1px 1px rgb(26, 26, 26), inset 2px 2px 1px 1px rgb(24, 24, 24);
+}
+
+@keyframes knobTurn {
+	0% {
+		transform: rotateZ(0deg);
+	}
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+
+#waveEmitter {
+    position: absolute;
+	border-radius: 50%;
+	background-color: rgb(160, 0, 0);
+}
+
+#radiowave {
+	width: 5px;
+	height: 5px;
+    position: absolute;
+	border-radius: 50%;
+	background-color: yellow;
+	animation: wavefade 2s ease-in-out forwards;
+}
+
+@keyframes wavefade {
+	0% {
+		opacity: 0;
+	}
+	80% {
+		opacity: 0.75;
+	}
+	100% {
+		opacity: 0;
+	}
+}

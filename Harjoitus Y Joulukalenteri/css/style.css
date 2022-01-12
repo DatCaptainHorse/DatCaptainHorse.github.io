@@ -1,0 +1,48 @@
+body {
+	overflow: hidden;
+	background-color: rgb(65, 65, 65);
+}
+
+.calendarHolder {
+	width: 50%;
+	height: auto;
+	margin: auto auto;
+}
+
+.calendarSpot {
+	float: left;
+	background-color: cadetblue;
+	width: 3vw;
+	height: 3vw;
+	margin: 50px;
+}
+
+#snowEmitter {
+	overflow: hidden;
+    position: absolute;
+	left: 0%;
+    /*border: 2px dashed red;*/
+}
+
+#snowArea {
+	overflow: hidden;
+}
+
+#snowflake {
+	overflow: hidden;
+    position: absolute;
+	width: 25px;
+	height: 25px;
+	border-radius: 50%;
+	/*border: 2px dotted blue;*/
+	animation: snowfadein 1s ease-in-out forwards;
+}
+
+@keyframes snowfadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0.75;
+	}
+}

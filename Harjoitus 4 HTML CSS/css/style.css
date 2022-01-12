@@ -1,0 +1,248 @@
+body {
+    background-color: rgb(65, 65, 65);
+}
+
+.hollowcircle {
+    margin: 10% 33%;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 10px;
+    border-color: darkgray;
+    display: inline-block;
+    background-color: lightgray;
+    box-shadow: 0px 0px 10px 5px black inset;
+    background-image: -webkit-radial-gradient( 50% 0%, 8% 50%, hsla(0,0%,100%,.5) 0%, hsla(0,0%,100%,0) 100%),
+    -webkit-radial-gradient( 50% 100%, 12% 50%, hsla(0,0%,100%,.6) 0%, hsla(0,0%,100%,0) 100%),
+    -webkit-radial-gradient( 0% 50%, 50% 7%, hsla(0,0%,100%,.5) 0%, hsla(0,0%,100%,0) 100%),
+    -webkit-radial-gradient( 100% 50%, 50% 5%, hsla(0,0%,100%,.5) 0%, hsla(0,0%,100%,0) 100%),
+    -webkit-repeating-radial-gradient( 50% 50%, 100% 100%, hsla(0,0%, 0%,0) 0%, hsla(0,0%, 0%,0) 3%, hsla(0,0%, 0%,.1) 3.5%),
+    -webkit-repeating-radial-gradient( 50% 50%, 100% 100%, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 6%, hsla(0,0%,100%,.1) 7.5%),
+    -webkit-repeating-radial-gradient( 50% 50%, 100% 100%, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.2) 2.2%),
+    -webkit-radial-gradient( 50% 50%, 200% 50%, hsla(0,0%,90%,1) 5%, hsla(0,0%,85%,1) 30%, hsla(0,0%,60%,1) 100%);
+}
+
+.roundbox {
+    position: absolute;
+    margin-left: 200px;
+    margin-top: -55px;
+    width: 100px;
+    height: 50px;
+    border-radius: 25%;
+    background-color: darkgray;
+}
+
+.numberbox {
+    position: absolute;
+    background-color: lightgray;
+}
+
+.center {
+    position: relative;
+    width: 0;
+    height: 0;
+    margin: 0 auto;
+}
+
+.centerdot {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    margin-left: -15px;
+    margin-top: 235px;
+    border-radius: 50%;
+    background-color: gray;
+    box-shadow: 0px 0px 10px 0.5px black inset;
+}
+
+.markers {
+    position: absolute;
+    height: 465px;
+    width: 465px;
+    margin-left: -242.5px;
+    margin-top: 7.5px;
+    border-radius: 50%;
+    border-style: dotted;
+    border-width: 10px;
+    border-color: rgb(65, 65, 65);
+}
+
+.indicatorCompassNorth {
+    position: absolute;
+    margin-left: -15px;
+    margin-top: 95px;
+    height: 0;
+    width: 0;
+    transform-origin: bottom;
+    animation: compassRotator;
+    animation-duration: 20.0s;
+    animation-iteration-count: infinite;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 155px solid darkred;
+    -webkit-filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
+    filter: drop-shadow(0px 0px 10px rgb(0, 0, 0));
+}
+
+.indicatorCompassSouth {
+    position: absolute;
+    margin-left: -15px;
+    height: 0;
+    width: 0;
+    transform-origin: bottom;
+    transform: rotateZ(180deg);
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 155px solid blue;
+}
+
+.indicatorSeconds {
+    position: absolute;
+    margin-left: -2.5px;
+    margin-top: 45px;
+    height: 205px;
+    width: 5px;
+    background-color: darkred;
+    transform-origin: bottom;
+    animation: indicatorRotator;
+    animation-duration: 60.0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(30, end);
+    box-shadow: 0px -10px 25px 1px black;
+}
+
+.indicatorSecondsTriangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin-top: -15px;
+    margin-left: -2.5px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 15px solid darkred;
+}
+
+.indicatorMinutes {
+    position: absolute;
+    margin-left: -5px;
+    margin-top: 100px;
+    height: 150px;
+    width: 10px;
+    background-color: goldenrod;
+    transform-origin: bottom;
+    animation: indicatorRotator;
+    animation-duration: 3600.0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(30, end);
+    box-shadow: 0px -10px 25px 0.5px black;
+}
+
+.indicatorMinutesTriangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin-top: -15px;
+    margin-left: -5px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 25px solid goldenrod;
+}
+
+.indicatorHours {
+    position: absolute;
+    margin-left: -7.5px;
+    margin-top: 150px;
+    height: 100px;
+    width: 15px;
+    background-color: green;
+    transform-origin: bottom;
+    animation: indicatorRotator;
+    animation-duration: 86400.0s;
+    animation-iteration-count: infinite;
+    animation-timing-function: steps(12, end);
+    box-shadow: 0px -10px 25px 0.15px black;
+}
+
+.indicatorHoursTriangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin-top: -25px;
+    margin-left: -7.5px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 35px solid green;
+}
+
+.indicatorTemp {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin-top: 100px;
+    transform-origin: top;
+    background-color: blue;
+    transform: rotateZ(180deg);
+    border-radius: 100px 100px 100px 100px;
+    box-shadow: 0px 0px 5px 1px black inset;
+    animation: indicatorTemp;
+    animation-duration: 10.0s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes indicatorRotator {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    50% {
+        transform: rotateZ(180deg);
+    }
+
+    100% {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes compassRotator {
+    0% {
+        transform: rotateZ(340deg);
+    }
+
+    20% {
+        transform: rotateZ(160deg);
+    }
+
+    50% {
+        transform: rotateZ(40deg);
+    }
+
+    60% {
+        transform: rotateZ(240deg);
+    }
+
+    80% {
+        transform: rotateZ(100deg);
+    }
+
+    100% {
+        transform: rotateZ(340deg);
+    }
+}
+
+@keyframes indicatorTemp {
+    0% {
+        height: 20px;
+        background-color: blue;
+    }
+
+    50% {
+        height: 100px;
+        background-color: red;
+    }
+
+    100% {
+        height: 20px;
+        background-color: blue;
+    }
+}

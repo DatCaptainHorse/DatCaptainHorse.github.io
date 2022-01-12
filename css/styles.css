@@ -1,0 +1,92 @@
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -999;
+    background-color: rgb(65, 65, 65);
+}
+
+#minimap {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    border: 2px solid gray;
+}
+
+#minimap-pointer {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    border: 2px dashed red;
+}
+
+.nav-red {
+    background-color: #dc3545 !important;
+}
+
+.nav-red:hover {
+    background-color: #b02a37 !important;
+}
+
+.nav-red:active {
+    background-color: #842029 !important;
+}
+
+.btn-red {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+}
+
+.btn-red:hover {
+    background-color: #b02a37 !important;
+    border-color: #b02a37 !important;
+}
+
+.btn-red:active {
+    background-color: #842029 !important;
+    border-color: #842029 !important;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+
+.btn-red:focus + .btn, .btn:focus {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+
+.btn-green {
+    background-color: #198754 !important;
+    border-color: #198754 !important;
+}
+
+.btn-green:hover {
+    background-color: #157347 !important;
+    border-color: #157347 !important;
+}
+
+.btn-green:active {
+    background-color: #0d452b !important;
+    border-color: #0d452b !important;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+
+.btn-green:focus + .btn, .btn:focus {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+
+#fakeSidebar, #realSidebar {
+    min-width: 200px;
+    animation: sidebarAnimation 1s infinite ease-in-out alternate paused;
+}
+
+@keyframes sidebarAnimation {
+    0% {
+        left: 0px;
+        min-width: 200px;
+    }
+
+    100% {
+        left: -215px;
+        min-width: 0px;
+    }
+}

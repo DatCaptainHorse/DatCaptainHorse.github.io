@@ -1,0 +1,256 @@
+body {
+	background-color: rgb(65, 65, 65);
+	overflow: hidden;
+	/*perspective: 1600px;*/
+}
+
+.realfakebackground {
+	position: fixed;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*animation: wobblyBG;
+	animation-duration: 30.0s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;*/
+	filter: blur(5px);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url("../resources/background.png");
+}
+
+.cdcoverbase {
+	position: absolute;
+	top: 10em;
+	left: 40%;
+	width: 500px;
+	height: 500px;
+	background-color:rgb(65, 65, 65);
+	border-style: solid;
+	border-color: rgb(65, 65, 65);
+	border-width: 8px;
+	border-left-width: 4px;
+	border-radius: 1%;
+	border-top-left-radius: 0%;
+	border-bottom-left-radius: 0%;
+	/*transform: rotateX(25deg);*/
+	transform-style: preserve-3d;
+}
+
+.cdcovertabs {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 65px;
+	height: 65px;
+	border-radius: 50%;
+	border-style: dashed;
+	border-color: rgb(40, 40, 40);
+	background-color: rgb(60, 60, 60);
+	transform: translateY(-50%) translateX(-50%);
+	transform-style: preserve-3d;
+}
+
+.cdcoverhinge {
+	position: relative;
+	top: 50%;
+	left: -56px;
+	width: 50px;
+	height: 498px;
+	transform: translateY(-50%);
+	background: repeating-linear-gradient(90deg, #232323, #232323 3px, #4b4b4b 3px, #4b4b4b 6px);
+	border-style: solid;
+	border-color: rgb(35, 35, 35);
+	border-width: 1px;
+	transform-style: preserve-3d;
+}
+
+.cdcoverlid {
+	position: absolute;
+	top: -8px;
+	left: -5px;
+	width: 501px;
+	height: 500px;
+	border-style: solid;
+	border-color: rgba(175, 175, 175, 0.5);
+	border-width: 8px;
+	border-left-width: 4px;
+	border-radius: 1%;
+	border-top-left-radius: 0%;
+	border-bottom-left-radius: 0%;
+	animation: lidOpen;
+	transform-origin: -25px 50%;
+	animation-duration: 5.0s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+	backdrop-filter: blur(0.5px);
+	transform-style: preserve-3d;
+}
+
+.cdcoverplastic {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(175, 175, 175, 0.25);
+	transform-style: preserve-3d;
+}
+
+.cdcoverlidpaper {
+	position: absolute;
+	top: 2px;
+	left: 5px;
+	width: 490px;
+	height: 495px;
+	animation: lidOpen;
+	transform-origin: -35px 50%;
+	animation-duration: 5.0s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+	transform-style: preserve-3d;
+}
+
+.cdcoverlidpaperfront, .cdcoverlidpaperback {
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
+}
+
+.cdcoverlidpaperfront {
+	font-family: Impact;
+	background-color: rgb(200, 200, 200);
+}
+
+.cdcoverlidpaperback {
+	color: lightgray;
+	font-family: Cambria;
+	transform: rotateY(180deg);
+	background-color: rgb(175, 45, 45);
+}
+
+.cdcoverlisttable {
+	width: 100%;
+}
+
+.cdcoverlistsong {
+	overflow: hidden;
+	margin: auto auto;
+	margin-top: 0px;
+	width: 200px;
+	height: 30px;
+}
+
+.cdcoverlistdivider {
+	position: absolute;
+	margin: 5px 49.5%;
+	width: 0px;
+	height: 39%;
+	border-style: solid;
+	border-color: rgb(175, 175, 175);
+	border-width: 2px;
+}
+
+.cdcoverlidhinge {
+	position: relative;
+	top: -8px;
+	left: -55px;
+	width: 51px;
+	height: 500px;
+	border-style: solid;
+	border-color: rgba(175, 175, 175, 0.5);
+	border-width: 8px;
+	border-left-width: 0px;
+	border-right-width: 0px;
+	border-radius: 10%/1%;
+	border-top-right-radius: 0%;
+	border-bottom-right-radius: 0%;
+	transform-style: preserve-3d;
+}
+
+.cdcoverlidtabholder {
+	position: absolute;
+	overflow: hidden;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	animation: lidOpen;
+	transform-origin: -25px 50%;
+	animation-duration: 5.0s;
+	animation-direction: alternate;
+	animation-iteration-count: infinite;
+	transform-style: preserve-3d;
+}
+
+.cdcoverlidtab {
+	position: absolute;
+	width: 8%;
+	height: 8%;
+	border-radius: 50%;
+	background-color: rgba(175, 175, 175, 0.25);
+	transform: translateY(-50%) translateX(-50%);
+	transform-style: preserve-3d;
+}
+
+.cddisk {
+	position: absolute;
+	top: 50%;
+	left: 89.2%;
+	width: 490px;
+	height: 490px;
+	border-radius: 50%;
+	box-shadow: 0px 0px 0px 150px rgb(200, 200, 200) inset;
+	transform: translateY(-50%) translateX(-90%);
+	transform-style: preserve-3d;
+	background-image: linear-gradient(65deg, rgb(100, 100, 100) 0%, rgb(225, 225, 225) 50%, rgb(100, 100, 100) 100%);
+}
+
+.cddiskcenter {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	width: 39%;
+	height: 39%;
+	border-radius: 50%;
+	box-shadow: 0px 0px 0px 62.5px rgba(200, 200, 200, 0.25) inset;
+	transform: translateY(-50%) translateX(-50%);
+	transform-style: preserve-3d;
+}
+
+@keyframes wobblyBG {
+	0% {
+		transform: skew(5deg) scaleX(105%);
+		filter: brightness(100%) blur(5px);
+	}
+
+	45% {
+		filter: brightness(100%) blur(5px);
+	}
+
+	50% {
+		filter: brightness(105%) blur(10px);
+	}
+
+	55% {
+		filter: brightness(100%) blur(5px);
+	}
+
+	100% {
+		transform: skew(-5deg) scaleX(105%);
+		filter: brightness(100%) blur(5px);
+	}
+}
+
+@keyframes lidOpen {
+	0% {
+		transform: rotateY(0deg);
+	}
+
+	100% {
+		transform: rotateY(-150deg);
+	}
+}
