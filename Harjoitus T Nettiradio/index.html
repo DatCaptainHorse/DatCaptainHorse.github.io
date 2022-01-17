@@ -9,13 +9,24 @@
 	<body>
 		<div class="radioBase">
 			<div class="radioChannelBox">
-				<p style="color: lightgray; font-family: lcdFont; font-size: 3em; margin: auto;">KANAVA 1</p>
+				<p id="currentStation">Ladataan..</p>
+				<p id="trackTime" class="hidden">[00:00 - 00:00]</p>
+				<div style="position: absolute; height: 25%; width: 100%; bottom: 10%;">
+					<button id="repeatButton" class="radioButton" style="float: left;" onclick="toggleRepeat()">Repeat</button>
+					<button id="toggleButton" class="radioButton" onclick="toggleRadio()">Play</button>
+					<button id="shuffleButton" class="radioButton" style="float: right;" onclick="toggleShuffle()">Shuffle</button>
+				</div>
 			</div>
 			<div class="radioAntenna">
 				<div id="waveEmitter" style="top: -10%; left: -25%; width: 15px; height: 15px;"></div>
 			</div>
 			<div class="radioKnob" style="top: 50%; left: 5%;"><div class="radioKnobIndicator"></div></div>
+			<select id="stationList" size="4" onchange="changeStation(this.selectedIndex)">
+				<option value="https://keygenjukebox.net/music/BF2_v1.50_Trn-DVT.mp3">keygenjukebox.net 1</option>
+				<option value="https://keygenjukebox.net/music/BReWErS_-_Timeshift_1.2_6trn.mp3">keygenjukebox.net 2</option>
+			</select>
 			<div class="radioKnob" style="top: 50%; left: 70%;"><div class="radioKnobIndicator"></div></div>
+			<audio id="audioSource"></audio>
 		</div>
 	</body>
 </html>

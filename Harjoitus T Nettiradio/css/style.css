@@ -14,8 +14,8 @@ body {
 	left: 25%;
 	width: 650px;
 	height: 350px;
-	background-color: gray;
-	box-shadow: inset -5px -5px 1px 1px rgb(80, 80, 80), inset 1px 1px 1px 1px rgb(59, 59, 59);
+	background-color: rgb(78, 78, 78);
+	box-shadow: inset -5px -5px 1px 1px rgb(43, 43, 43), inset 1px 1px 1px 1px rgb(59, 59, 59);
 }
 
 .radioAntenna {
@@ -24,8 +24,8 @@ body {
 	left: 15%;
 	width: 10px;
 	height: 25%;
-	background-color: gray;
-	box-shadow: inset -2px 0px 1px 1px rgb(56, 56, 56), inset 1px 1px 1px 1px rgb(56, 56, 56);
+	background-color: rgb(65, 65, 65);
+	box-shadow: inset -2px 0px 1px 1px rgb(43, 43, 43), inset 1px 1px 1px 1px rgb(56, 56, 56);
 }
 
 .radioKnob {
@@ -33,8 +33,8 @@ body {
 	width: 150px;
 	height: 150px;
 	border-radius: 50%;
-	background-color: darkgray;
-	box-shadow: inset -5px -5px 3px 1px rgb(56, 56, 56), 3px 3px 3px 1px rgb(56, 56, 56);
+	background-color: rgb(128, 128, 128);
+	box-shadow: inset -5px -5px 3px 1px rgb(70, 70, 70), 3px 3px 3px 1px rgb(56, 56, 56);
 }
 
 .radioKnobIndicator {
@@ -44,12 +44,12 @@ body {
 	height: 75px;
 	background-color: rgb(32, 32, 32);
 	transform-origin: center bottom;
-	animation: knobTurn 2s ease-in-out infinite;
 }
 
 .radioChannelBox {
 	position: absolute;
 	text-align: center;
+	overflow: hidden;
 	top: 10%;
 	left: 10%;
 	width: 80%;
@@ -58,12 +58,59 @@ body {
 	box-shadow: inset -5px -5px 1px 1px rgb(26, 26, 26), inset 2px 2px 1px 1px rgb(24, 24, 24);
 }
 
-@keyframes knobTurn {
+.radioButton {
+	margin: 1%;
+	width: 15%;
+	height: 100%;
+	color: lightgray;
+	border-color: gray;
+	background-color: rgb(32, 32, 32);
+	border-radius: 1rem;
+}
+
+#stationList {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 35%;
+	height: 40%;
+	color: lightgray;
+	text-align: center;
+	background-color: rgb(32, 32, 32);
+	transform: translateX(-50%);
+}
+
+.hidden {
+	color: transparent !important;
+}
+
+#trackTime {
+	position: absolute;
+	top: -45%;
+	width: 100%;
+	height: 75%;
+	color: lightgray;
+	font-family: lcdFont;
+	font-size: 3em;
+}
+
+#currentStation {
+	position: absolute;
+	top: -45%;
+	width: 100%;
+	height: 50%;
+	color: lightgray;
+	font-family: lcdFont;
+	font-size: 3em;
+	animation: textSlide 15s linear infinite;
+}
+
+@keyframes textSlide {
 	0% {
-		transform: rotateZ(0deg);
+		left: 90%;
 	}
 	100% {
-		transform: rotateZ(360deg);
+		left: -90%;
 	}
 }
 
