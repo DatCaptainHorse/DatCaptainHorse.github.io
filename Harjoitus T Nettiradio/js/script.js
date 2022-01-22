@@ -1,7 +1,7 @@
-var waveEmitterHolder, waveParticlesAlive = [], waveEmitTimeout, waveUpdateTimeout;
-var emitInterval = 1.5, emitCount = 25, updateInterval = 0.01, particleMaxRange = 350.0;
-var currentStationHolder, audioSourceHolder, stationlistHolder, toggleButtonHolder, repeatButtonHolder, shuffleButtonHolder, trackTimeHolder;
-var documentHidden = false, isRadioPlaying = false, isShuffleOn = false;
+let waveEmitterHolder, waveParticlesAlive = [], waveEmitTimeout, waveUpdateTimeout;
+const emitInterval = 1.5, emitCount = 25, updateInterval = 0.01, particleMaxRange = 350.0;
+let currentStationHolder, audioSourceHolder, stationlistHolder, toggleButtonHolder, repeatButtonHolder, shuffleButtonHolder, trackTimeHolder;
+let documentHidden = false, isRadioPlaying = false, isShuffleOn = false;
 
 window.addEventListener("load", function() {
     waveEmitterHolder = document.getElementById("waveEmitter");
@@ -92,8 +92,8 @@ function emitParticles() {
 function updateParticles() {   
     if (documentHidden)
         return;
-         
-    doClear = false
+
+    let doClear = false
     waveParticlesAlive.forEach(particle => {
         particle.style.top = (parseFloat(particle.style.top) * 1.03) + "px";
         particle.style.left = (parseFloat(particle.style.left) * 1.03) + "px";
@@ -103,8 +103,8 @@ function updateParticles() {
     });
 
     if (doClear) {
-        toRemove = waveParticlesAlive.splice(0, emitCount);
-        toRemove.forEach(particle => { 
+        let toRemove = waveParticlesAlive.splice(0, emitCount);
+        toRemove.forEach(particle => {
             particle.remove();
         });
     }
@@ -118,7 +118,7 @@ function updateParticles() {
 function onTrackEnd() {
     if (isRadioPlaying && isShuffleOn && !audioSourceHolder.loop) {
         let nextStation = "0";
-        while (nextStation == stationlistHolder.selectedIndex)
+        while (nextStation === stationlistHolder.selectedIndex)
             nextStation = Math.floor(Math.random() * stationlistHolder.length);
 
         changeStation(nextStation);
