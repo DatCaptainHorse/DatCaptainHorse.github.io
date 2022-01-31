@@ -4,7 +4,7 @@ body {
 }
 
 .debug {
-	border: red dashed 3px;
+	outline: red dashed 3px;
 }
 
 .centered {
@@ -14,24 +14,27 @@ body {
 	transform: translate(-50%, -50%);
 }
 
-#boxholder {
-	overflow: hidden;
-	display: inline-flex;
-	flex-flow: row wrap;
-	justify-content: flex-start;
+#boxvisual {
 	min-width: 100px;
-	max-width: 510px;
+	max-width: 1010px;
 	border: lightgray 5px solid;
 	border-radius: 50px;
 	background-color: #383838;
 	transition: min-width 0.5s ease-out, min-height 0.3s ease-out;
 }
 
+#boxholder {
+	overflow: hidden;
+	display: inline-flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+}
+
 .numberbox {
 	font-family: Consolas, serif;
 	text-align: center;
 	line-height: 85px;
-	font-size: 80px;
+	font-size: 60px;
 	margin: 5px;
 	width: 85px;
 	height: 85px;
@@ -43,12 +46,12 @@ body {
 
 @keyframes numberPopIn {
 	0% {
-		transform: scale(0, 0);
+		transform: scale(0);
 	}
 	60% {
-		transform: scale(1.1, 1.1);
+		transform: scale(1.1);
 	}
 	100% {
-		transform: scale(1, 1);
+		transform: scale(1);
 	}
 }
