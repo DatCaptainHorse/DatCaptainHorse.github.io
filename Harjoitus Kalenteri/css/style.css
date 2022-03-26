@@ -1,0 +1,38 @@
+body {
+	overflow: hidden;
+	background-color: rgb(70, 70, 70);
+}
+
+.centered {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#calendar {
+	display: table;
+	padding: 5px;
+	width: 55vw;
+	background-color: #e3e3e3;
+}
+
+.datebox {
+	margin: 5px;
+	float: left;
+	display: table-cell;
+	width: 9vw;
+	height: 9vw;
+	min-width: 45px;
+	min-height: 45px;
+	max-width: 100px;
+	max-height: 100px;
+	background-color: gray;
+	text-align: center;
+	line-height: 2rem;
+	font-size: 2rem;
+}
+
+.currentDate {
+	outline: #6999e7 solid 5px;
+}
